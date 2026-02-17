@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone - Student Project</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #eaeded; color: #0F1111; }
+
+.header {
+    background: #131921;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-area img {
+    width: 110px;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 30px;
+    display: flex;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-btn {
+    background: #febd69;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.signin-btn {
+    background: #febd69;
+    color: #131921;
+    padding: 6px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-bar {
+    background: #232f3e;
+}
+
+.nav-links {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.hero {
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+.banner-img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-all-btn {
+    background: #febd69;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card img {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.price-tag {
+    color: #B12704;
+    font-weight: bold;
+}
+
+.brand {
+    color: #565959;
+    font-size: 12px;
+}
+
+.footer {
+    background: #131a22;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-col h4 {
+    color: #febd69;
+    margin-bottom: 10px;
+}
+
+.footer-col p {
+    font-size: 12px;
+    line-height: 2;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="top-header">
+
+<div class="logo-area">
+<img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo">
+</div>
+
+<div class="search-bar">
+<input class="search-input" placeholder="Search Amazon.in">
+<button class="search-btn">🔍</button>
+</div>
+
+<div class="header-actions">
+<a href="#" class="signin-btn">Sign In</a>
+<span>Returns & Orders</span>
+<span>Cart 🛒</span>
+</div>
+
+</div>
+</header>
+
+<nav class="nav-bar">
+<ul class="nav-links">
+<li><a href="#">Mobiles</a></li>
+<li><a href="#">Electronics</a></li>
+<li><a href="#">Fashion</a></li>
+<li><a href="#">Prime</a></li>
+<li><a href="#">Home & Kitchen</a></li>
+<li><a href="#">Today's Deals</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<img src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg" class="banner-img">
+</div>
+
+<!-- Fashion Section -->
+<section class="section-container">
+<div class="section-title">
+Trending in Fashion
+<button class="view-all-btn">SEE ALL</button>
+</div>
+
+<div class="grid">
+
+<!-- Men T-Shirts -->
+<a class="card">
+<img src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg">
+<h3>Men T-Shirts</h3>
+<p class="brand">US Polo, Levi’s</p>
+<p class="price-tag">₹499 onwards</p>
+</a>
+
+<!-- Sports Shoes -->
+<a class="card">
+<img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg">
+<h3>Sports Shoes</h3>
+<p class="brand">Nike, Adidas</p>
+<p class="price-tag">Up to 60% off</p>
+</a>
+
+<!-- Women Ethnic (Proper Saree Image) -->
+<a class="card">
+<img src="https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg">
+<h3>Women Ethnic</h3>
+<p class="brand">Biba, Aurelia</p>
+<p class="price-tag">Great Indian Sale</p>
+</a>
+
+<!-- Handbags -->
+<a class="card">
+<img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg">
+<h3>Handbags</h3>
+<p class="brand">Caprese</p>
+<p class="price-tag">Deal of the Day</p>
+</a>
+
+</div>
+</section>
+
+<!-- Electronics Section -->
+<section class="section-container">
+<div class="section-title">
+Electronics
+<button class="view-all-btn">SEE ALL</button>
+</div>
+
+<div class="grid">
+
+<a class="card">
+<img src="https://images.pexels.com/photos/18105/pexels-photo.jpg">
+<h3>Laptops</h3>
+<p class="brand">HP, Dell</p>
+<p class="price-tag">From ₹29,990</p>
+</a>
+
+<a class="card">
+<img src="https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg">
+<h3>Headphones</h3>
+<p class="brand">Sony, JBL</p>
+<p class="price-tag">Up to 70% off</p>
+</a>
+
+<a class="card">
+<img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg">
+<h3>Smart Watches</h3>
+<p class="brand">Apple, Samsung</p>
+<p class="price-tag">Best Seller</p>
+</a>
+
+<a class="card">
+<img src="https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg">
+<h3>Cameras</h3>
+<p class="brand">Canon, Nikon</p>
+<p class="price-tag">Exchange Offer</p>
+</a>
+
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-grid">
+
+<div class="footer-col">
+<h4>Get to Know Us</h4>
+<p>About Amazon</p>
+<p>Careers</p>
+</div>
+
+<div class="footer-col">
+<h4>Help</h4>
+<p>Payments</p>
+<p>Shipping</p>
+</div>
+
+<div class="footer-col">
+<h4>Policy</h4>
+<p>Returns</p>
+<p>Security</p>
+</div>
+
+<div class="footer-col">
+<h4>Registered Office</h4>
+<p>Amazon India Pvt Ltd</p>
+<p>Bengaluru, India</p>
+</div>
+
+</div>
+</footer>
+
+</body>
+</html>
