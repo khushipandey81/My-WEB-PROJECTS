@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Myntra Clone</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#fff;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+height:80px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 60px;
+
+background:white;
+
+box-shadow:
+0 2px 14px rgba(0,0,0,.08);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.left{
+
+display:flex;
+
+align-items:center;
+
+gap:40px;
+
+}
+
+.logo img{
+
+height:52px;
+
+cursor:pointer;
+
+}
+
+.menu{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.menu a{
+
+text-decoration:none;
+
+color:#282c3f;
+
+font-size:14px;
+
+font-weight:800;
+
+position:relative;
+
+padding:30px 0;
+
+}
+
+.menu a:hover{
+
+color:#ff3f6c;
+
+}
+
+.menu a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:0;
+
+height:4px;
+
+background:#ff3f6c;
+
+transition:.3s;
+
+}
+
+.menu a:hover::after{
+
+width:100%;
+
+}
+
+/* SEARCH */
+
+.search{
+
+width:35%;
+
+height:42px;
+
+background:#f5f5f6;
+
+border-radius:5px;
+
+display:flex;
+
+align-items:center;
+
+padding:0 15px;
+
+gap:10px;
+
+}
+
+.search input{
+
+border:none;
+
+background:none;
+
+outline:none;
+
+width:100%;
+
+}
+
+/* RIGHT */
+
+.right{
+
+display:flex;
+
+gap:35px;
+
+}
+
+.icon{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+font-size:12px;
+
+gap:6px;
+
+cursor:pointer;
+
+}
+
+.icon i{
+
+font-size:18px;
+
+}
+
+/* HERO */
+
+.hero{
+
+padding:25px;
+
+}
+
+.hero img{
+
+width:100%;
+
+height:430px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+}
+
+/* TITLE */
+
+.heading{
+
+padding:30px 50px;
+
+font-size:30px;
+
+font-weight:900;
+
+color:#282c3f;
+
+}
+
+/* PRODUCTS */
+
+.products{
+
+padding:0 50px;
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(250px,1fr)
+);
+
+gap:28px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:14px;
+
+overflow:hidden;
+
+position:relative;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+transform:
+translateY(-8px);
+
+}
+
+.discount{
+
+position:absolute;
+
+top:12px;
+
+left:12px;
+
+background:#ff3f6c;
+
+color:white;
+
+padding:8px;
+
+border-radius:8px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+.card img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+}
+
+.info{
+
+padding:18px;
+
+}
+
+.brand{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+.text{
+
+margin-top:5px;
+
+color:#666;
+
+}
+
+.price{
+
+margin-top:10px;
+
+font-size:20px;
+
+color:#ff3f6c;
+
+font-weight:bold;
+
+}
+
+.old{
+
+font-size:14px;
+
+text-decoration:line-through;
+
+color:#999;
+
+}
+
+button{
+
+margin-top:14px;
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+background:#ff3f6c;
+
+color:white;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+/* FOOTER */
+
+footer{
+
+margin-top:80px;
+
+background:#111;
+
+padding:50px;
+
+color:#bbb;
+
+}
+
+.footer{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:40px;
+
+}
+
+.box{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.box h3{
+
+color:white;
+
+margin-bottom:18px;
+
+}
+
+.box a{
+
+text-decoration:none;
+
+color:#aaa;
+
+margin-bottom:12px;
+
+}
+
+.box a:hover{
+
+color:#ff3f6c;
+
+}
+
+.copy{
+
+margin-top:30px;
+
+padding-top:20px;
+
+border-top:1px solid #333;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="left">
+
+<div class="logo">
+
+<img
+src="myntra-transparent-icon-free-png.webp"
+alt="Myntra">
+
+</div>
+
+<nav class="menu">
+
+<a href="#">MEN</a>
+<a href="#">WOMEN</a>
+<a href="#">KIDS</a>
+<a href="#">HOME</a>
+<a href="#">BEAUTY</a>
+<a href="#">STUDIO</a>
+
+</nav>
+
+</div>
+
+<div class="search">
+
+<i class="fa fa-search"></i>
+
+<input
+placeholder=
+"Search for products, brands and more">
+
+</div>
+
+<div class="right">
+
+<div class="icon">
+
+<i class="fa-regular fa-user"></i>
+
+Profile
+
+</div>
+
+<div class="icon">
+
+<i class="fa-regular fa-heart"></i>
+
+Wishlist
+
+</div>
+
+<div class="icon">
+
+<i class="fa-solid fa-bag-shopping"></i>
+
+Bag
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<img
+src="https://images.unsplash.com/photo-1441986300917-64674bd600d8">
+
+</section>
+
+<div class="heading">
+
+BIGGEST DEALS
+
+</div>
+
+<section class="products">
+
+<div class="card">
+
+<div class="discount">
+50% OFF
+</div>
+
+<img src="mens.jpg">
+
+<div class="info">
+
+<div class="brand">
+MEN
+</div>
+
+<div class="text">
+Casual Collection
+</div>
+
+<div class="price">
+
+₹999
+
+<span class="old">
+
+₹1999
+
+</span>
+
+</div>
+
+<button>
+Add To Bag
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="discount">
+40% OFF
+</div>
+
+<img src="How-to-Look-Stylish-in-Traditional-Indian-Clothing-Where-to-Buy-the-Best-Fashionable-Ethnic-Wear-for-Women-Online.webp">
+
+<div class="info">
+
+<div class="brand">
+WOMEN
+</div>
+
+<div class="text">
+Trending Dresses
+</div>
+
+<div class="price">
+
+₹2399
+
+<span class="old">
+
+₹3999
+
+</span>
+
+</div>
+
+<button>
+Add To Bag
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="discount">
+60% OFF
+</div>
+
+<img src="kids.jpg">
+
+<div class="info">
+
+<div class="brand">
+KIDS
+</div>
+
+<div class="text">
+New Arrival
+</div>
+
+<div class="price">
+
+₹799
+
+<span class="old">
+
+₹1699
+
+</span>
+
+</div>
+
+<button>
+Add To Bag
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer">
+
+<div class="box">
+
+<h3>ONLINE SHOPPING</h3>
+
+<a href="#">Men</a>
+<a href="#">Women</a>
+<a href="#">Kids</a>
+
+</div>
+
+<div class="box">
+
+<h3>CUSTOMER POLICIES</h3>
+
+<a href="#">Contact Us</a>
+<a href="#">Returns</a>
+<a href="#">FAQ</a>
+
+</div>
+
+<div class="box">
+
+<h3>KEEP IN TOUCH</h3>
+
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">YouTube</a>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+© 2026 Myntra Clone
+
+</div>
+
+</footer>
+
+<script>
+
+document
+.querySelectorAll("button")
+
+.forEach(
+
+b=>{
+
+b.onclick=
+function(){
+
+this.innerHTML=
+"Added ✓"
+
+}
+
+}
+
+)
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+ 
